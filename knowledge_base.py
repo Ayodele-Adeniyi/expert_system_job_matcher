@@ -185,17 +185,17 @@ def normalize_certs(selected, other_text):
 
 
 # Spec aligned positions
+# Spec aligned positions (matches the screenshot exactly)
 POSITIONS = [
     {
         "name": "Entry-Level Python Engineer",
         "required": [
             ("python_coursework", "bool", True, "Python course work is required"),
             ("se_coursework", "bool", True, "Software Engineering course work is required"),
-            ("agile_coursework", "bool", True, "Agile course is required"),
             ("has_bachelors_cs", "bool", True, "Bachelor in CS is required"),
         ],
         "desired": [
-            ("data_coursework", "bool", True, "Data related coursework is desired"),
+            ("agile_coursework", "bool", True, "Agile course is desired"),
         ],
     },
     {
@@ -204,11 +204,10 @@ POSITIONS = [
             ("python_years", "min", 3, "At least 3 years Python development is required"),
             ("data_years", "min", 1, "At least 1 year data development is required"),
             ("agile_projects", "bool", True, "Experience in Agile projects is required"),
-            ("has_git", "bool", True, "Git experience is required"),
             ("has_bachelors_cs", "bool", True, "Bachelor in CS is required"),
         ],
         "desired": [
-            ("data_coursework", "bool", True, "Data related coursework is desired"),
+            ("has_git", "bool", True, "Git experience is desired"),
         ],
     },
     {
@@ -218,10 +217,7 @@ POSITIONS = [
             ("agile_years", "min", 2, "At least 2 years experience in Agile projects is required"),
             ("has_pmi_lean", "bool", True, "PMI Lean Project Management Certification is required"),
         ],
-        "desired": [
-            ("has_pmp", "bool", True, "PMP certification is desired"),
-            ("has_csm", "bool", True, "Certified Scrum Master certification is desired"),
-        ],
+        "desired": [],
     },
     {
         "name": "Senior Knowledge Engineer",
@@ -231,9 +227,6 @@ POSITIONS = [
             ("data_architecture_years", "min", 2, "At least 2 years data architecture and data development is required"),
             ("has_masters_cs", "bool", True, "Masters in CS is required"),
         ],
-        "desired": [
-            ("expert_systems_coursework", "bool", True, "Expert Systems or AI coursework is desired"),
-            ("data_coursework", "bool", True, "Advanced data coursework is desired"),
-        ],
+        "desired": [],
     },
 ]
