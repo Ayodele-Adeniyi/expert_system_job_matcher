@@ -88,6 +88,24 @@ _LEVEL_RANK = {
     "Doctoral Degree (Ph.D., D.B.A., Ed.D.)": 4,
 }
 
+COURSE_WORK_EXAMPLES = {
+    "python_coursework": [
+        "Python Programming",
+        "Introduction to Computer Science",
+        "Data Structures and Algorithms",
+        "Object-Oriented Programming",
+    ],
+    "se_coursework": [
+        "Software Engineering",
+        "Object-Oriented Programming",
+        "DevOps Principles",
+    ],
+    "agile_coursework": [
+        "Agile Software Development",
+        "Scrum Master Fundamentals",
+        "DevOps Principles",
+    ],
+}
 
 def normalize_educations(educations):
     highest_rank = -1

@@ -10,6 +10,7 @@ from knowledge_base import (
     STEM_COURSE_OPTIONS,
     CERT_OPTIONS,
     POSITIONS,
+    COURSE_WORK_EXAMPLES,
     normalize_educations,
     normalize_courses,
     normalize_certs,
@@ -193,12 +194,16 @@ with right_col:
                         st.markdown("Met:")
                         for req in r.required_passed:
                             st.write(f"✅ {req.message}")
-                    if r.required_failed:
-                        st.markdown("Missing:")
-                        for req in r.required_failed:
-                            st.write(f"❌ {req.message}")
-                            st.caption(f"Expected: {req.expected} | Actual: {req.actual if req.actual is not None else 'Not provided'}")
-                    st.progress(r.required_match_pct / 100.0, text=f"Required Match: {r.required_match_pct:.1f}%")
+                    for req in r.required_failed:
+                        st.write(f"❌ {req.message}")
+                        
+                        if req.field in COURSE_WORK_EXAMPLES:
+                            examples = ", ".join(COURSE_WORK_EXAMPLES[req.field])
+                            st.caption(f"Examples that count: {examples}")
+
+                        st.caption(
+                            f"Expected: {req.expected} | Actual: {req.actual if req.actual is not None else 'Not provided'}"
+                        )
 
                 with c2:
                     st.markdown("#### Desired")
